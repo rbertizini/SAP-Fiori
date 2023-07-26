@@ -1,0 +1,32 @@
+<mvc:View controllerName="lkm.rm.ajax.controller.ViewData"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+			<List 
+				id="LstProd"
+				class="sapUiResponsiveMargin"
+				width="auto"						
+				items="{
+						path: 'DataProd>/Item',
+						sorter:
+							{
+								path: 'id',
+								group: false,
+								descending: false
+							}
+					}">			
+			<headerToolbar>
+				<Toolbar id="TbarProd">
+					<Title id="TitTbarProd" text="Produtos"/>
+				</Toolbar>
+			</headerToolbar>
+			<items>
+				<ObjectListItem id="ObjlstProd"
+					title="{DataProd>id} ({DataProd>type})">					
+				</ObjectListItem>
+			</items>
+		</List>
+		</content>
+    </Page>
+</mvc:View>
